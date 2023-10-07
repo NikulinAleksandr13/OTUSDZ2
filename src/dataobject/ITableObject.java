@@ -1,2 +1,5 @@
-package dataobject;public interface ITableObject {
+package dataobject;
+
+public interface ITableObject {
+    String toSting();
 }

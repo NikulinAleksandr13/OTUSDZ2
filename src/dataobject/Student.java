@@ -1,26 +1,36 @@
-package dataoject;
+package dataobject;
 
 public class Student {
 
-    private String name = "";
-    private int age = -1;
-    private String id = "";
+    private int id;
+    private String fio;
+    private String sex;
+    private int id_group;
 
-    public Student(String name, int age, String id){
-        this.name = name;
-        this.age = age;
+
+    public Student(int id, String fio, String sex, int id_group){
         this.id = id;
+        this.fio = fio;
+        this.sex = sex;
+        this.id_group = id_group;
+
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
+    }
+    public String getFio() {
+        return fio;
+    }
+    public String getSex() {
+        return sex;
+    }
+    public int getIdGroup() {
+        return id_group;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("'%s', '%s', '%s', '%s'", getId(), getFio(), getSex(), getIdGroup());
     }
 }

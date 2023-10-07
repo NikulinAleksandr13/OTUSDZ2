@@ -1,25 +1,24 @@
-package dataoject;
+package dataobject;
 
 public class Curator {
-    private String name = "";
-    private int age = -1;
-    private String id = "";
+    private int id;
+    private String fio;
 
-    public Curator(String name, int age, String id){
-        this.name = name;
-        this.age = age;
+    public Curator(int id, String fio){
         this.id = id;
+        this.fio = fio;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
+    public String getFio() {
+        return fio;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("'%s', '%s'", getId(), getFio());
+    }
+
 }

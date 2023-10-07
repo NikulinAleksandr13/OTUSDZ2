@@ -1,25 +1,29 @@
-package dataoject;
+package dataobject;
 
 public class Group {
+    private int id;
     private String name = "";
-    private int age = -1;
-    private String id = "";
+    private int id_curator;
 
-    public Group(String name, int age, String id){
-        this.name = name;
-        this.age = age;
+
+    public Group(int id, String name, int id_curator){
         this.id = id;
+        this.name = name;
+        this.id_curator = id_curator;
     }
 
+    public int getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
-
-    public int getAge() {
-        return age;
+    public int getIdCurator() {
+        return id_curator;
     }
 
-    public String getId() {
-        return id;
+    @Override
+    public String toString() {
+        return String.format("'%s', '%s', '%s'", getId(), getName(), getIdCurator());
     }
 }
