@@ -80,21 +80,28 @@ public class Main {
 
             studentsTable.resultDisplay(studentsTable.selectAll("students.fio, groups.name_group, curators.fio", "students","groups", "students.id_group",
                     "groups.id", "curators", "groups.id_curator", "curators.id"));
+            System.out.println("---------------------------");
 
-             studentsTable.selectStudentsCountSex("fio", "sex", "m");
-            studentsTable.selectStudentsCountSex("fio", "sex", "w");
+            studentsTable.resultDisplay(studentsTable.selectStudentsCountSex("fio", "sex", "m"));
 
+            System.out.println("---------------------------");
+            studentsTable.resultDisplay(studentsTable.selectStudentsCountSex("fio", "sex", "w"));
+
+            System.out.println("---------------------------");
             // Список без изменения
-            groupsTable.selectStudentsCountSex("*", "id", "1");
+            groupsTable.resultDisplay(groupsTable.selectStudentsCountSex("*", "id", "1"));
 
             groupsTable.updateGroupsUpdateCurators("id_curator", "2", "id", "1");
 
+            System.out.println("---------------------------");
             // Список после изменения кураторов
-            groupsTable.selectStudentsCountSex("*", "id", "1");
+            groupsTable.resultDisplay(groupsTable.selectStudentsCountSex("*", "id", "1"));
 
-            groupsTable.selectGroupsWithCurators("groups.name_group, curators.fio", "id_curator", "curators", "id");
+            System.out.println("---------------------------");
+            groupsTable.resultDisplay(groupsTable.selectGroupsWithCurators("groups.name_group, curators.fio", "id_curator", "curators", "id"));
 
-            studentsTable.selectStudentsTheGroups("fio", "id_group", "id", "groups", "name_group", "Critical");
+            System.out.println("---------------------------");
+            studentsTable.resultDisplay(studentsTable.selectStudentsTheGroups("fio", "id_group", "id", "groups", "name_group", "Critical"));
 
 
         } finally {

@@ -48,10 +48,11 @@ public class DBConnector implements IDBConnector {
     public ResultSet executeQuery(String sqlRequest){
         this.open();
     try {
-        statement.executeQuery(sqlRequest);
-    } catch (SQLException ex){
+         return statement.executeQuery(sqlRequest);
+    } catch (SQLException ex) {
         ex.printStackTrace();
-    } return null;
+        return null;
+    }
     }
 
     public void execute(String sqlRequest){
@@ -60,6 +61,7 @@ public class DBConnector implements IDBConnector {
             statement.execute(sqlRequest);
         } catch (SQLException ex){
             ex.printStackTrace();
+
         }
     }
 }
